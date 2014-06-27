@@ -12,10 +12,10 @@ MASTER_URL = local # Run on local machine - change to run on a different machine
 XDMAK7_JNI =  # /path/to/xdmak7.so Make sure the library is distributed across all of the nodes
 
 # default
-default: example-WordCount
+default: software-WordCount
 
 # Builders
-example-%: guard-SP guard-MASTER_URL package
+software-%: guard-SP guard-MASTER_URL package
 	$(SP)/bin/spark-submit --class "$(PACK).software.$*" --master $(MASTER_URL) $(PACK_JAR) $(PWD)
 
 fpga-%: guard-SP guard-XDMAK7_JNI guard-MASTER_URL package

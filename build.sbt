@@ -14,10 +14,14 @@ libraryDependencies ++= Seq(
     "org.apache.hadoop" % "hadoop-common" % "2.0.0-cdh4.3.0" % "test",
     "org.apache.hadoop" % "hadoop-hdfs" % "2.0.0-cdh4.3.0" % "test" exclude ("commons-daemon", "commons-daemon"),
     "org.apache.hadoop" % "hadoop-hdfs" % "2.0.0-cdh4.3.0" % "test" classifier "tests",
-    "org.apache.hadoop" % "hadoop-common" % "2.0.0-cdh4.3.0" % "compile" classifier "tests"
+    "org.apache.hadoop" % "hadoop-common" % "2.0.0-cdh4.3.0" % "compile" classifier "tests",
+    "org.scalanlp" %% "breeze" % "0.8.1",
+    "org.scalanlp" %% "breeze-natives" % "0.8.1"
 )
 
 
 
 resolvers ++= Seq("Akka Repository" at "http://repo.akka.io/releases/",
-    "Cloudera Repo" at "https://repository.cloudera.com/artifactory/cloudera-repos/")
+    "Cloudera Repo" at "https://repository.cloudera.com/artifactory/cloudera-repos/", 
+    "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/",
+    "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/")
